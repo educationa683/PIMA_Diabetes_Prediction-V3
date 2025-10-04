@@ -53,7 +53,7 @@ gb_model = GradientBoostingClassifier(random_state=42)
 # Define hyperparameter grid
 param_grid = {
     'gradientboostingclassifier__n_estimators': [75, 100, 125],
-    'gradientboostingclassifier__max_depth': [2, 3, 4],
+    'gradientboostingclassifier__max_depth': [2, 3, 4, 8],
     'gradientboostingclassifier__subsample': [0.5, 0.6]
 }
 
@@ -61,7 +61,7 @@ param_grid = {
 model_pipeline = make_pipeline(preprocessor, gb_model)
 
 # Grid search with cross-validation
-grid_search = GridSearchCV(model_pipeline, param_grid, cv=5, scoring='recall', n_jobs=-1)
+grid_search = GridSearchCV(model_pipeline, param_grid, cv=10, scoring='recall', n_jobs=-1)
 grid_search.fit(Xtrain, ytrain)
 
 

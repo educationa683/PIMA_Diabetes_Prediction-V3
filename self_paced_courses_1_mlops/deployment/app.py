@@ -8,7 +8,7 @@ model_path = hf_hub_download(repo_id="LearnGenAI765/PIMA-Diabetes-Prediction-V3"
 model = joblib.load(model_path)
 
 # Streamlit UI for Machine Failure Prediction
-st.title("PIMA Diabetes Prediction App")
+st.title("PIMA Diabetes Prediction App (new version!)")
 st.write("""
 This application predicts the likelihood of a patient having diabetes based on their health attributes.
 Please enter the sensor and configuration data below to get a prediction.
